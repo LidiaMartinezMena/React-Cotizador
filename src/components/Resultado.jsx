@@ -10,7 +10,9 @@ const Resultado = () => {
     const {marca, plan, year} = datos
     const yearRef = useRef(year)
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const [nombreMarca] = useCallback( MARCAS.filter(m => m.id === Number(marca)), [resultado])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const [nombrePlan] = useCallback( PLANES.filter(p => p.id === Number(plan)),[resultado])
 
 

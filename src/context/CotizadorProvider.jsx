@@ -1,8 +1,9 @@
 import { createContext, useState } from "react";
-import { obtenerDiferenciaYear, calcularMarca, calcularPlan, formatearDinero } from "../../helpers";
+import { obtenerDiferenciaYear, calcularMarca, calcularPlan, formatearDinero } from "../helpers";
 
 const CotizadorContext = createContext()
 
+// eslint-disable-next-line react/prop-types
 const CotizadorProvider = ({children}) => {
 
     const [datos, setDatos] = useState({
@@ -56,13 +57,13 @@ const CotizadorProvider = ({children}) => {
     }
 
 
-    return (
+    return(
         <CotizadorContext.Provider
             value={{
                 datos,
                 handleChangeDatos,
-                setError,
                 error,
+                setError,
                 cotizarSeguro,
                 resultado,
                 cargando
